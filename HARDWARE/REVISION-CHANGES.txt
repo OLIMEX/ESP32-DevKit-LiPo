@@ -1,0 +1,23 @@
+Hardware revsion A1
+=========
+Initial release
+
+Hardware revision B
+========
+1. R5(NA/R0603) deleted to save space on the board;
+2. BAT1 connector package changed from DW02R to DW02S;
+3. Added: R2, R5, C9, BAT_PWR_E1, and BAT_SENS_E1 to allow battery measurement;
+5. U5 symbol and package changed from ESP-WROOM-32 to the ESP32-WROVER(_PCB,_IPEX,-xB)_and_ESP-WROOM-32-Universal;
+6. L1 changed from 2.2uH/1.5A/DCR<0.1R/CD32 to 2.2uH/1.5A/DCR=72mR/20%/3.00x3.00x1.50mm/CD32(NR3015T2R2M);
+7. PWRLED1(LED/RED/0603) and R2(2.2k/R0603) deleted to save space on the board. The CHARGING1 led will be used for both charging and power good indicator;
+8. Added: R15, R16 and PWR_SENS_E1 to allow external power on/off detection;
+9. U2(CH340) corrected power supply - from 3.3V to only +5V_USB. For 3.3/5V(Tx/Rx) volatage translators were used: D4 and D4(1N5819S4/SOD123), R6, and R7. R6 and R7 were changed from 220R/R0603 to 10k/0603. Thus, CH340 will not be powered when on battery - avoiding additional battery discharge;
+10. U4(BAT54C(SOT23-3)) renamed to D3;
+11. R1(10k/0603) changed to 10k/0402;
+12. D1 and D2 changed from 1N5822/SS34/SMA to 1N5819S4/SOD123;
+13. R11 changed from 4.99k/1%/R0603 to 220k/R0402, and R12 was changed from 1.1k/1%/R0603 to 49.9k/1%/R0402 for to save power consumption when on battery;
+14. R14(NA/R0603) deleted for to free place on the PCB;
+15. R13 changed from 1k/R0603 to 10k/R0402;
+16. R8 and R9 changed from 1k/R0603 to 2.2k/0402;
+16. All 0805 capacitors exchanged with 0603, all 0603 resistors with 0402 and several 0603 caps changed to 0402. The BOM is completely different!
+
