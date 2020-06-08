@@ -1,3 +1,0 @@
-(sym_lib_table
-(lib (name ESP32-DevKit-Lipo_Rev_B)(type Legacy)(uri ${KIPRJMOD}/ESP32-DevKit-Lipo_Rev_B.lib)(options "")(descr ""))
-)
