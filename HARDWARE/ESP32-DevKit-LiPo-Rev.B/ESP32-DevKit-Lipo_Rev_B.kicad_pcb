@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 176)
+    (drawings 175)
     (tracks 1575)
     (zones 0)
     (modules 58)
@@ -21,18 +21,18 @@
   (layers
     (0 F.Cu mixed)
     (31 B.Cu mixed)
-    (32 B.Adhes user hide)
-    (33 F.Adhes user hide)
-    (34 B.Paste user hide)
-    (35 F.Paste user hide)
-    (36 B.SilkS user hide)
+    (32 B.Adhes user)
+    (33 F.Adhes user)
+    (34 B.Paste user)
+    (35 F.Paste user)
+    (36 B.SilkS user)
     (37 F.SilkS user)
-    (38 B.Mask user hide)
-    (39 F.Mask user hide)
-    (40 Dwgs.User user hide)
-    (41 Cmts.User user hide)
-    (42 Eco1.User user hide)
-    (43 Eco2.User user hide)
+    (38 B.Mask user)
+    (39 F.Mask user)
+    (40 Dwgs.User user)
+    (41 Cmts.User user)
+    (42 Eco1.User user)
+    (43 Eco2.User user)
     (44 Edge.Cuts user)
     (45 Margin user hide)
     (46 B.CrtYd user hide)
@@ -264,6 +264,36 @@
     (add_net VBAT)
   )
 
+  (module OLIMEX_RLC-FP:CD32 (layer F.Cu) (tedit 5CCACF57) (tstamp 5C57F8E6)
+    (at 140.208 100.203 90)
+    (descr "ROTATED COUNTERCLOCKWISE 90")
+    (tags "ROTATED COUNTERCLOCKWISE 90")
+    (path /580E1FA3)
+    (attr smd)
+    (fp_text reference L1 (at -1.143 -1.905 270) (layer F.SilkS)
+      (effects (font (size 0.5588 0.5588) (thickness 0.1397)))
+    )
+    (fp_text value "2.2uH/1.5A/DCR=72mR/20%/3.00x3.00x1.50mm/CD32(NR3015T2R2M)" (at 0 3.175 -90) (layer F.Fab)
+      (effects (font (size 1.27 1.27) (thickness 0.254)))
+    )
+    (fp_arc (start -0.1 0) (end -0.1 0.25) (angle -180) (layer F.SilkS) (width 0.2))
+    (fp_arc (start -0.1 -0.5) (end -0.1 -0.25) (angle -180) (layer F.SilkS) (width 0.2))
+    (fp_arc (start -0.1 0.5) (end -0.1 0.75) (angle -180) (layer F.SilkS) (width 0.2))
+    (fp_line (start -0.15 0.75) (end -0.15 1.1) (layer F.SilkS) (width 0.2))
+    (fp_line (start -0.15 -0.75) (end -0.15 -1.1) (layer F.SilkS) (width 0.2))
+    (fp_line (start -0.2 -1.5) (end 0.2 -1.5) (layer F.SilkS) (width 0.254))
+    (fp_line (start -0.2 1.5) (end 0.2 1.5) (layer F.SilkS) (width 0.254))
+    (pad 2 smd rect (at 1.2 0 270) (size 1.6 3) (layers F.Cu F.Paste F.Mask)
+      (net 4 +3V3) (solder_mask_margin 0.0508) (clearance 0.0508))
+    (pad 1 smd rect (at -1.2 0 270) (size 1.6 3) (layers F.Cu F.Paste F.Mask)
+      (net 34 "Net-(L1-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
+    (model ${KIPRJMOD}/3d/L-CD32_shielded.step
+      (offset (xyz 0 0 0.65))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 -90))
+    )
+  )
+
   (module OLIMEX_Cases-FP:ESP32-WROVER_MODULE locked (layer F.Cu) (tedit 5C9246A9) (tstamp 5C544DCD)
     (at 143.51 80.772)
     (descr "A powerful, generic Wi-Fi+BT+BLE MCU module")
@@ -443,7 +473,7 @@
       (net 2 GND) (solder_mask_margin 0.0508) (zone_connect 2))
     (pad 39 thru_hole circle (at -2.8 1.05) (size 1.3 1.3) (drill 0.6) (layers *.Cu)
       (net 2 GND) (zone_connect 2))
-    (model ${KISYS3DMOD}/ESP32-WROOM-32D-56544.STEP
+    (model ${KIPRJMOD}/3d/ESP32-WROOM-32D-56544.STEP
       (offset (xyz 0 2.9972 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -474,7 +504,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 thru_hole rect (at -1.0287 -3.53568) (size 1.4 1.4) (drill 0.9) (layers *.Cu *.Mask)
       (net 54 VBAT) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/Molex_PicoBlade_530470210.step
+    (model ${KIPRJMOD}/3d/Molex_PicoBlade_530470210.step
       (offset (xyz 0 3.5 0))
       (scale (xyz 1.5 1.5 1.5))
       (rotate (xyz 0 0 0))
@@ -549,7 +579,7 @@
       (net 7 "Net-(CHARGING1-Pad1)") (solder_mask_margin 0.0508))
     (pad 2 smd rect (at 0.762 0 90) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/LED_0603_Y.wrl
+    (model ${KIPRJMOD}/3d/LED_0603_Y.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -708,7 +738,7 @@
       (net 3 "Net-(C3-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -1.1 0.8 270) (size 1.4 1.2) (layers F.Cu F.Paste F.Mask)
       (net 10 "Net-(C2-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/QSG5032.step
+    (model ${KIPRJMOD}/3d/QSG5032.step
       (at (xyz 0 0 0))
       (scale (xyz 0.65 0.8 1))
       (rotate (xyz 0 0 0))
@@ -744,7 +774,7 @@
       (net 2 GND) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -0.889 0) (size 1.016 1.016) (layers F.Cu F.Paste F.Mask)
       (net 8 /+5V_USB) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/C_0603_1608Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0603_1608Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -963,7 +993,7 @@
       (net 64 /GPIO11\SD_CMD))
     (pad 17 thru_hole circle (at 19.05 0 270) (size 1.778 1.778) (drill 1) (layers *.Cu *.Mask)
       (net 65 /GPIO10\SD_DATA3))
-    (model ${KISYS3DMOD}/HN1x19-PinHeader_1x19_P2.54mm_Vertical.step
+    (model ${KIPRJMOD}/3d/HN1x19-PinHeader_1x19_P2.54mm_Vertical.step
       (offset (xyz 24.13 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 90))
@@ -1182,7 +1212,7 @@
       (net 67 /GPIO7\SD_DATA0))
     (pad 17 thru_hole circle (at 19.05 0 270) (size 1.778 1.778) (drill 1) (layers *.Cu *.Mask)
       (net 68 /GPIO8\SD_DATA1))
-    (model ${KISYS3DMOD}/HN1x19-PinHeader_1x19_P2.54mm_Vertical.step
+    (model ${KIPRJMOD}/3d/HN1x19-PinHeader_1x19_P2.54mm_Vertical.step
       (offset (xyz 24.13 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 90))
@@ -1217,7 +1247,7 @@
       (net 11 "Net-(C6-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 3 smd rect (at -1.10236 0.00254 180) (size 1.4 1) (layers F.Cu F.Paste F.Mask)
       (net 54 VBAT) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOT-23.step
+    (model ${KIPRJMOD}/3d/SOT-23.step
       (offset (xyz 0 0 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 90))
@@ -1269,36 +1299,6 @@
       (net 46 "Net-(FID3-PadFid1)") (solder_mask_margin 0.127) (clearance 1.016) (zone_connect 0))
   )
 
-  (module OLIMEX_RLC-FP:CD32 (layer F.Cu) (tedit 5C6BC0B3) (tstamp 5C57F8E6)
-    (at 140.208 100.203 90)
-    (descr "ROTATED COUNTERCLOCKWISE 90")
-    (tags "ROTATED COUNTERCLOCKWISE 90")
-    (path /580E1FA3)
-    (attr smd)
-    (fp_text reference L1 (at -1.143 -1.905 270) (layer F.SilkS)
-      (effects (font (size 0.5588 0.5588) (thickness 0.1397)))
-    )
-    (fp_text value "2.2uH/1.5A/DCR=72mR/20%/3.00x3.00x1.50mm/CD32(NR3015T2R2M)" (at 0 3.175 -90) (layer F.Fab)
-      (effects (font (size 1.27 1.27) (thickness 0.254)))
-    )
-    (fp_line (start -0.2 1.5) (end 0.2 1.5) (layer F.SilkS) (width 0.254))
-    (fp_line (start -0.2 -1.5) (end 0.2 -1.5) (layer F.SilkS) (width 0.254))
-    (fp_line (start -0.15 -0.75) (end -0.15 -1.1) (layer F.SilkS) (width 0.2))
-    (fp_line (start -0.15 0.75) (end -0.15 1.1) (layer F.SilkS) (width 0.2))
-    (fp_arc (start -0.1 0) (end -0.1 0.25) (angle -180) (layer F.SilkS) (width 0.2))
-    (fp_arc (start -0.1 -0.5) (end -0.1 -0.25) (angle -180) (layer F.SilkS) (width 0.2))
-    (fp_arc (start -0.1 0.5) (end -0.1 0.75) (angle -180) (layer F.SilkS) (width 0.2))
-    (pad 2 smd rect (at 1.2 0 270) (size 1.6 3) (layers F.Cu F.Paste F.Mask)
-      (net 4 +3V3) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (pad 1 smd rect (at -1.2 0 270) (size 1.6 3) (layers F.Cu F.Paste F.Mask)
-      (net 34 "Net-(L1-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/CD32_inductor.step
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz -90 0 0))
-    )
-  )
-
   (module OLIMEX_Transistors-FP:SOT23 (layer F.Cu) (tedit 5C6BBAAC) (tstamp 5B4C5429)
     (at 150.368 109.22 90)
     (path /58D6B1BC)
@@ -1327,7 +1327,7 @@
       (net 35 "Net-(Q2-Pad2)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 3 smd rect (at -1.10236 0.00254 90) (size 1.4 1) (layers F.Cu F.Paste F.Mask)
       (net 5 /ESP_EN) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOT-23.step
+    (model ${KIPRJMOD}/3d/SOT-23.step
       (offset (xyz 0 0 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 90))
@@ -1362,7 +1362,7 @@
       (net 37 "Net-(Q3-Pad2)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 3 smd rect (at -1.10236 0.00254 90) (size 1.4 1) (layers F.Cu F.Paste F.Mask)
       (net 38 "Net-(Q3-Pad3)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOT-23.step
+    (model ${KIPRJMOD}/3d/SOT-23.step
       (offset (xyz 0 0 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 90))
@@ -1393,7 +1393,7 @@
       (net 40 "Net-(R4-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 4 smd rect (at -1.3 -0.95 180) (size 1.2 0.55) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOT-23-5.step
+    (model ${KIPRJMOD}/3d/SOT-23-5.step
       (offset (xyz 0 0 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -90))
@@ -1460,7 +1460,7 @@
       (net 8 /+5V_USB) (solder_mask_margin 0.0508))
     (pad 20 smd rect (at -2.925 -3.6195 270) (size 0.325 1.27) (layers F.Cu F.Paste F.Mask)
       (net 70 "Net-(U2-Pad20)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/SSOP-20_5.3x7.2mm_P0.65mm.wrl
+    (model ${KIPRJMOD}/3d/SSOP-20_5.3x7.2mm_P0.65mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 -90))
@@ -1491,7 +1491,7 @@
       (net 41 "Net-(R11-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 4 smd rect (at -1.3 -0.95 180) (size 1.2 0.55) (layers F.Cu F.Paste F.Mask)
       (net 11 "Net-(C6-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOT-23-5.step
+    (model ${KIPRJMOD}/3d/SOT-23-5.step
       (offset (xyz 0 0 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -90))
@@ -1550,7 +1550,7 @@
       (net 31 /GPIO0) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at 1.1 0.95 90) (size 1 1.4) (layers F.Cu F.Paste F.Mask)
       (net 33 /GPIO2) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/BAT54.step
+    (model ${KIPRJMOD}/3d/BAT54.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 -90))
@@ -1584,9 +1584,6 @@
     (fp_line (start 2.4 3.7) (end 2.4 -3.7) (layer F.Fab) (width 0.15))
     (fp_line (start 3.429 -4.064) (end 2.413 -3.683) (layer F.SilkS) (width 0.254))
     (fp_line (start 3.429 4.064) (end 2.413 3.683) (layer F.SilkS) (width 0.254))
-    (fp_text user "Внимание! Има фрезоване направено с Drill Slots!!!" (at 34.163 0) (layer F.SilkS)
-      (effects (font (size 2.54 2.54) (thickness 0.508)))
-    )
     (fp_text user GND (at -0.9 -1.6 270) (layer F.Fab)
       (effects (font (size 0.508 0.508) (thickness 0.127)))
     )
@@ -1631,7 +1628,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 0 thru_hole oval (at 0.25 -3.6) (size 1.2 1.8) (drill oval 0.6 1.2) (layers *.Cu *.Mask)
       (net 2 GND) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/usb_micro_4p.stp
+    (model ${KIPRJMOD}/3d/usb_micro_4p.stp
       (offset (xyz -2.45 0 1.1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 -90))
@@ -1665,7 +1662,7 @@
       (solder_mask_margin 0.0508))
     (pad "" np_thru_hole circle (at 0 0.9 270) (size 0.7 0.7) (drill 0.7) (layers *.Cu *.Mask)
       (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/it1185.step
+    (model ${KIPRJMOD}/3d/it1185.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -2225,7 +2222,7 @@
       (net 8 /+5V_USB) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -1.9 0 90) (size 1 1.4) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOD123.step
+    (model ${KIPRJMOD}/3d/SOD123.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -180))
@@ -2257,7 +2254,7 @@
       (net 1 +5V) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -1.9 0 90) (size 1 1.4) (layers F.Cu F.Paste F.Mask)
       (net 11 "Net-(C6-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOD123.step
+    (model ${KIPRJMOD}/3d/SOD123.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -180))
@@ -2289,7 +2286,7 @@
       (net 57 /GPIO3\U0RXD) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -1.9 0 90) (size 1 1.4) (layers F.Cu F.Paste F.Mask)
       (net 58 "Net-(D4-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOD123.step
+    (model ${KIPRJMOD}/3d/SOD123.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -180))
@@ -2321,7 +2318,7 @@
       (net 60 "Net-(D5-Pad2)") (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -1.9 0 270) (size 1 1.4) (layers F.Cu F.Paste F.Mask)
       (net 59 /GPIO1\U0TXD) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/SOD123.step
+    (model ${KIPRJMOD}/3d/SOD123.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -180))
@@ -2383,7 +2380,7 @@
       (net 2 GND) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -0.889 0) (size 1.016 1.016) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/C_0603_1608Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0603_1608Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2419,7 +2416,7 @@
       (net 2 GND) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -0.889 0 90) (size 1.016 1.016) (layers F.Cu F.Paste F.Mask)
       (net 11 "Net-(C6-Pad1)") (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/C_0603_1608Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0603_1608Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2455,7 +2452,7 @@
       (net 2 GND) (solder_mask_margin 0.0508) (clearance 0.0508))
     (pad 1 smd rect (at -0.889 0) (size 1.016 1.016) (layers F.Cu F.Paste F.Mask)
       (net 4 +3V3) (solder_mask_margin 0.0508) (clearance 0.0508))
-    (model ${KISYS3DMOD}/C_0603_1608Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0603_1608Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2491,7 +2488,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2527,7 +2524,7 @@
       (net 55 "Net-(BAT_SENS_E1-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 71 "Net-(BAT_PWR_E1-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2563,7 +2560,7 @@
       (net 39 "Net-(R3-Pad2)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 7 "Net-(CHARGING1-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2599,7 +2596,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 40 "Net-(R4-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2635,7 +2632,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 55 "Net-(BAT_SENS_E1-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2671,7 +2668,7 @@
       (net 60 "Net-(D5-Pad2)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 8 /+5V_USB) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2738,7 +2735,7 @@
       (net 6 "Net-(Q2-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 37 "Net-(Q3-Pad2)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2774,7 +2771,7 @@
       (net 36 "Net-(Q3-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 35 "Net-(Q2-Pad2)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2810,7 +2807,7 @@
       (net 9 /D_Com) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 38 "Net-(Q3-Pad3)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2846,7 +2843,7 @@
       (net 4 +3V3) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 41 "Net-(R11-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2882,7 +2879,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 41 "Net-(R11-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2918,7 +2915,7 @@
       (net 5 /ESP_EN) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 90) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 4 +3V3) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2954,7 +2951,7 @@
       (net 69 "Net-(PWR_SENS_E1-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 1 +5V) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2990,7 +2987,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 69 "Net-(PWR_SENS_E1-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3026,7 +3023,7 @@
       (net 57 /GPIO3\U0RXD) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 56 "Net-(C5-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/R_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/R_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3062,7 +3059,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 270) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 10 "Net-(C2-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/C_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3098,7 +3095,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 90) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 3 "Net-(C3-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/C_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3134,7 +3131,7 @@
       (net 2 GND) (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 56 "Net-(C5-Pad1)") (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/C_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3170,7 +3167,7 @@
       (net 55 "Net-(BAT_SENS_E1-Pad1)") (solder_mask_margin 0.0508))
     (pad 1 smd rect (at -0.508 0 180) (size 0.5 0.55) (layers F.Cu F.Paste F.Mask)
       (net 2 GND) (solder_mask_margin 0.0508))
-    (model ${KISYS3DMOD}/C_0402_1005Metric.wrl
+    (model ${KIPRJMOD}/3d/C_0402_1005Metric.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3192,9 +3189,6 @@
       (net 72 "Net-(FID4-PadFid1)") (solder_mask_margin 0.127) (clearance 1.016) (zone_connect 0))
   )
 
-  (gr_text "Цецо, панелизирай платката така, \nче антената да не застъпва\nUSB-то, Бутона и Диода!!!" (at 144.78 162.56) (layer F.Cu)
-    (effects (font (size 3 3) (thickness 0.75)))
-  )
   (gr_text + (at 147.7645 117.475) (layer F.SilkS) (tstamp 5C5C344C)
     (effects (font (size 0.762 0.762) (thickness 0.1905)))
   )
