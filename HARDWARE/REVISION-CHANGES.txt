@@ -32,7 +32,7 @@ Major changes in hardware revision C
 
 Major changes in hardware revision D
 ========
-1. STEP-down DCDC changed to HX6211A332MR.
+1. STEP-down DCDC changed to HX6211A332MR, this reduces consumption in power saving modes significantly (from around 65uA down to around 10uA).
 2. CH340 changed to CH340X.
 3. Added diaode D6 to ESP_E (reset).
 4. Added CE sign.
